@@ -1,0 +1,60 @@
+Universal Commands (Can Be Used With Every Command):-
+{command} | findstr {string} --> Filters Information & Provides The Requested Data
+{command} | clip --> Copies The Output Of The Command
+cls --> Clears The CMD
+
+IP Address Related Commands:-
+ipconfig --> Provides The Network Addresses
+ipconfig /all --> Provides Every Network Addresses
+ipconfig /release --> Releases All The Network Addresses
+ipconfig /renew --> (Preceded By 'ipconfig /release') Generates New Network Addresses
+ipconfig /release "Wi-Fi"
+
+Troubleshooting DNS:-
+ipconfig /displaydns --> Provides The Current DNS Info
+ipconfig /flushdns --> Clears DNS Cache
+
+Network Commands:-
+nslookup {website} --> Provides All The Info About A Specific Website
+getmac /v --> Provides All The MAC Addresses
+ping {website} --> Pings The Website
+ping -t {website} --> Pings The Website Infinitely (Ctrl + C To Quit)
+tracert --> Traces The Path To The Website & Checks For Buffery Routes
+tracert -t --> 'tracert' But Faster
+netstat --> Displays All The Connections
+netstat -af --> Lists The Open Ports
+netstat -o --> Lists The Process ID Of All The Ports
+netstat -e -t 5 --> Provides All The Send & Received Bits Info
+route print --> Lists All The Routes
+
+Troubleshooting Power Issues:-
+powercfg /energy --> Provides A Detailed Info On Energy Usage
+powercfg /batteryreport --> Provides A Detailed Info On Battery Status
+
+File Associations:-
+assoc --> Provides All The FileType Associations
+assoc {fileType}={Application} --> Changes The Specified FileType Association
+
+Checking For System Errors:-
+chkdsk /f --> Checks For Errors & Fixes It
+chkdsk /r --> Checks For Errors In Data Segments & Fixes It (May Require Reboot)
+sfc /scannow --> (SFC = System File Checking) Checks & Fixes Errors In All The Files (Including Windows Files & DLL's)
+DISM /Online /Cleanup /CheckHealth --> (DISM = Deployment Image Servicing & Management) Checks & Fixes System Image On  A Small Scale
+DISM /Online /Cleanup-Image /ScanHealth --> Deep Scan
+DISM /Online /Cleanup-Image /RestoreHealth --> Fixes The System Image
+
+Task Commands:-
+tasklist --> Lists All The Running Tasks
+taskkill /f /pid {ProcessID} --> Kills The Specified Task
+
+NETSH:-
+netsh wlan show wlanreport --> Provides A Wireless Report Of WLAN
+netsh interface show interfacereport --> Provides A Wireless Report Of Interface
+netsh interface ip show address | findstr "IP Address" --> Lists IP Addresses At The Quickest
+netsh interface ip show dnsservers --> Lists All The DNS Servers
+netsh advfirewall set allprofiles state off --> Turns Off The Windows Defender Firewall
+netsh advfirewall set allprofiles state on --> Turns On The Windows Defender Firewall
+
+Miscellaneous:-
+shutdown --> Shuts Down The System
+shutdown /r /fw /f /t 0 --> Restarts The System Into The System BIOS
